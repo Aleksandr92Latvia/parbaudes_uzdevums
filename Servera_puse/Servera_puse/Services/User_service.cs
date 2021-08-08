@@ -20,11 +20,11 @@ namespace Servera_puse.Services
     public class User_service: I_User_service
     {
         private readonly AppSettings _appSettings;
-        private Konteksts Konteksts;
+        private Konteksts _konteksts;
 
         public User_service(IOptions<AppSettings> appSettings, Konteksts konteksts)
         {
-            Konteksts = konteksts;
+            _konteksts = konteksts;
             _appSettings = appSettings.Value;
         }
 
@@ -32,7 +32,7 @@ namespace Servera_puse.Services
         {
             //autorizacija
             var algoritms = SHA256.Create();
-            var user = Konteksts.Users.SingleOrDefault(x => x.Username == username && x.Password == Convert.ToBase64String(algoritms.ComputeHash(Encoding.UTF8.GetBytes(password))));
+            var user = _konteksts.Users.SingleOrDefault(x => x.Username == username && x.Password == Convert.ToBase64String(algoritms.ComputeHash(Encoding.UTF8.GetBytes(password))));
 
             //neveiksmiga autorizacija
             if (user == null)
