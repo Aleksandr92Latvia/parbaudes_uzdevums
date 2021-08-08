@@ -32,6 +32,7 @@ namespace Servera_puse
         {
             services.AddCors();
             services.AddControllers();
+            services.AddDbContext<Konteksts>();
 
             //pieslegshana json datnei
             var appSettingsSection = Configuration.GetSection("AppSettings");

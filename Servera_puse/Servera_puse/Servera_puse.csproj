@@ -7,6 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210808101128_Migracija.cs" />
     <Compile Remove="Migrations\20210808101128_Migracija.Designer.cs" />
+    <Compile Remove="Migrations\20210808183951_Migracija.cs" />
+    <Compile Remove="Migrations\20210808183951_Migracija.Designer.cs" />
+    <Compile Remove="Migrations\20210808184152_Migracija.cs" />
+    <Compile Remove="Migrations\20210808184152_Migracija.Designer.cs" />
+    <Compile Remove="Migrations\20210808192144_Migracija2.cs" />
+    <Compile Remove="Migrations\20210808192144_Migracija2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
