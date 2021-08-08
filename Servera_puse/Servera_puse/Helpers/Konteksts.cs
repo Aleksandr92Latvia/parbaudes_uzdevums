@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Threading.Tasks;
 using Servera_puse.Entities;
@@ -9,6 +10,13 @@ namespace Servera_puse.Helpers
 {
     public class Konteksts : DbContext
     {
+        protected readonly IConfiguration Configuration;
+
+        public Konteksts(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public DbSet<File> Datnes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Parametr> Parametrs { get; set; }
